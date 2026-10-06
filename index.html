@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Assist -- Portable Demo</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div>
+      <h1>Agent Assist</h1>
+      <p>AA vs Non-AA performance metrics -- AHT, FCR, RCR, CSAT, NPS, Acceptance Rate</p>
+    </div>
+    <span class="demo-badge">Demo data -- portable snapshot</span>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <div class="filter-group">
+    <label>Channel</label>
+    <select id="filterChannel">
+      <option value="all">All</option>
+      <option value="voice">Voice</option>
+      <option value="chat">Chat</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Agent Group</label>
+    <select id="filterGroup">
+      <option value="all">All</option>
+      <option value="alpha_group">Baseline / Pilot</option>
+      <option value="ab_test_500pairs">A/B Test (500 pairs)</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Time Grain</label>
+    <select id="filterGrain">
+      <option value="Daily">Daily</option>
+      <option value="Weekly">Weekly</option>
+      <option value="Monthly">Monthly</option>
+    </select>
+  </div>
+</div>
+
+<div class="tabs" id="tabs">
+  <button class="tab-btn active" data-tab="metric-defs">Metric Definitions</button>
+  <button class="tab-btn" data-tab="core-metrics-kpis">Executive Summary</button>
+  <button class="tab-btn" data-tab="exec-summary">AHT</button>
+  <button class="tab-btn" data-tab="sentiment-score">Sentiment Score</button>
+  <button class="tab-btn" data-tab="aht-workflow">Metrics by L3 Workflow</button>
+  <button class="tab-btn" data-tab="core-metrics">Core Metrics by Endpoint</button>
+  <button class="tab-btn" data-tab="agent-util">Agent Utilization</button>
+</div>
+
+<div class="content">
+  <div class="tab-panel active" id="panel-metric-defs"></div>
+  <div class="tab-panel" id="panel-core-metrics-kpis"></div>
+  <div class="tab-panel" id="panel-exec-summary"></div>
+  <div class="tab-panel" id="panel-sentiment-score"></div>
+  <div class="tab-panel" id="panel-aht-workflow"></div>
+  <div class="tab-panel" id="panel-core-metrics"></div>
+  <div class="tab-panel" id="panel-agent-util"></div>
+</div>
+
+<div class="footer-note">
+  Portable demo build. All figures are synthetic sample data generated from the app's own
+  built-in demo-data generator, then re-scaled and jittered so nothing resembles real
+  production numbers -- relative relationships (AA vs Non-AA gaps, endpoint rankings, trend
+  shapes) are preserved for demo purposes only. Not connected to any live system.
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
